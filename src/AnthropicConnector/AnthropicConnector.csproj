@@ -1,9 +1,36 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>net8.0</TargetFramework>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <LangVersion>latest</LangVersion>
+    <PackageId>AnthropicConnector</PackageId>
+    <Version>0.0.0</Version>
+    <Authors>Stevan Freeborn</Authors>
+    <Description>Anthropic Connector for Semantic Kernel</Description>
+    <PackageProjectUrl>https://anthropicconnector.stevanfreeborn.com/</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/StevanFreeborn/anthropic-connector</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+    <PackageTags>anthropic;connector;semantic;kernel</PackageTags>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+    <PackageLicenseFile>License.md</PackageLicenseFile>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
   </PropertyGroup>
+
+  <ItemGroup>
+    <InternalsVisibleTo Include="$(AssemblyName).Tests" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="..\..\README.md" Pack="true" PackagePath="\" />
+    <None Include="..\..\License.md" Pack="true" PackagePath="\" />
+    <None Include="CHANGELOG.md" Pack="true" PackagePath="\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="AnthropicClient" Version="0.0.1" />
+    <PackageReference Include="Microsoft.SemanticKernel" Version="1.15.1" />
+  </ItemGroup>
 
 </Project>
